@@ -84,7 +84,7 @@ with open('epg_creation.csv') as csv_file:
                 print("Error add Domain > '"+postDomain)
                 print(postDomain.content)
             ## Add VRF just to avoid alarms in ACI
-            payload = '{"fvRsCtx":{"attributes":{"tnFvCtxName":"vrfMigracion"},"children":[]}}'
+            payload = '{"fvRsCtx":{"attributes":{"tnFvCtxName":"vrfCloud-main"},"children":[]}}'
             postVRF = s.post(APIC_URL+'/api/node/mo/uni/tn-'+tenant+'/BD-'+name+'/rsctx.json', verify=False, data=payload)
             if postVRF.status_code == 200:
                 print("Add VRF in '"+name)

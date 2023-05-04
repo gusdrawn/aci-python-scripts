@@ -64,7 +64,7 @@ with open('epg_addstatic.csv') as csv_file:
             if postStatic.status_code == 200:
                 print("Added EPG '"+epg+"' (Encap: '"+vlan+"') to the VPC '"+vpc+"' on nodes '"+node+"'")
             else:
-                print("Error creating Static Port EPG > '"+postStatic)
+                print("Error creating Static Port EPG > '"+postStatic.text)
                 print(postStatic.content)
             line_count += 1
         else:
